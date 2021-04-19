@@ -1,0 +1,141 @@
+*{margin: 0;
+padding:0;
+}
+body {
+    background: #c3bcc3;
+    color: white;
+    font-family:Arial, Helvetica, sans-serif;
+}
+h1{
+    color: white;
+    text-align: center;
+    padding-top: 5px;
+}
+  #mapid{
+    width: 100vw;
+    height: 90vh;
+    
+}
+
+.my-legend {
+    z-index: 1000;
+    position: fixed;
+    bottom: 134px;
+    background-color: rgba(255,255,255,0.8);
+    left: 90%;
+    top: 20%;
+    box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
+    width: 102px;
+    height: 70%;
+    overflow: hidden;
+}
+
+.legend-title {
+    color: black;
+    text-align: center;
+    font-size: small;
+    }
+.my-legend .legend-scale ul {
+    color: transparent;
+   .section-list {
+    float: left;
+    max-width: 68px;
+    background: #fff;
+    .section-tab {
+      list-style: none;
+      display: inline-block;
+      -webkit-writing-mode: vertical-lr;
+      /* old Win safari */
+      writing-mode: vertical-rl;/* FF */
+      writing-mode: tb-lr;
+      /* writing-mode:sideways-lr;  could be the one */
+      /* eventually untill sideways-lr is working everywhere */
+      transform: scale(-1, -1);
+      white-space: nowrap;
+      a {
+        display: block;
+        padding: 16px 20px;
+      }
+    }
+  }
+
+}
+    }
+.my-legend .legend-scale ul li {
+    display: block;
+    float: left;
+    width: 50px;
+    margin-bottom: 6px;
+    text-align: center;
+    font-size: 80%;
+    list-style: none;
+    color: rgba(0,0,0,0);
+    }
+
+.legend-scale {
+    height: 100%
+}
+.my-legend ul.legend-labels li span {
+    display: block;
+    height: 50px;
+    width: 15px;
+    position: relative;
+    left: 40%;
+    }
+  
+  #min,#max{
+    color: black;
+    height: 30px;
+    font-size: small;
+  }
+  #max{
+    top:33%;
+    left: 28%;
+  }
+
+  #tweets_in_view{
+    color: black;
+    font-weight: bold;
+    font-size: small;
+    text-align: center;
+  }
+
+  .end{
+    height: 30px;
+  }
+
+  .header{
+    z-index: 2000;
+    margin: 1px;
+    margin-top: 0px;
+    background-color: #00acee;
+    box-shadow: 0px 10px 5px 0px rgba(0,0,0,0.35);
+  }
+
+.increment_time{
+    border-radius: 4px;
+    color: white;
+    background-color: #00ACEE;
+    border: none;
+    text-shadow: 2px 2px #0005;
+    position: relative;
+    left: 50%;
+    top: 6%;
+    font-size: 40px;
+}
+
+#play{
+    font-size: 30px;
+    padding-left: 7px;
+}
+.increment_time:hover{
+    color: lightgrey;
+}
+
+.increment_time:hover{
+    color:grey;
+}
+
+.buttons{
+  justify-items: baseline;
+}

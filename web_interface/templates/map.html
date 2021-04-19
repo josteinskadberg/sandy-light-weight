@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+  <script type="text/javascript"> // Collecting data sent over from python
+    let coords = {{ result }};
+    let texts = {{ tweets | safe}};
+    let datetimes = {{ dates | safe}}
+    let sandy_ids = {{ sandy | safe}}
+    let rest = {{ rest | safe }}
+    console.log(coords.length, texts.length);
+  </script>
+  <link rel="stylesheet" type="text/css" href="static/style.css">
+  <title>Map of tweets</title>
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin="" />
+  <!-- Make sure you put this AFTER Leaflet's CSS -->
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""></script>
+</head>
+
+<body>
+  <div class="header">
+    <h1>Hurricane Sandy</h1>
+    <p id="date_text"></p>
+
+
+    <input type="button" class="increment_time" value="‹" onclick=regress_hour() />
+    <input type="button" class="increment_time" id="play" value="▶" onclick="start_play()" />
+    <input type="button" class="increment_time" value="›" onclick=advance_hour() />
+    <div id="filters">
+    </div>
+
+  </div>
+  <div class="map_container">
+    <div id="mapid"></div>
+    <div class='my-legend'>
+      <div id=tweets_in_view>Tweets in view:</div>
+      <div class='legend-scale'>
+        <ul class='legend-labels'>
+          <li class="end"><span id="max"></span></li>
+          <li style="height: 100%;"><span style='background-image:linear-gradient(#f65656,#e1d84d);'></span></li>
+          <li style="height: 100%;"><span style='background-image:linear-gradient(#e1d84d ,#cfdd4b, #83d247);'></span>
+          </li>
+          <li style="height: 100%;"><span style='background-image:linear-gradient(#83d247,#45cf48);'></span></li>
+          <li style="height: 100%;"><span style=' background-image:linear-gradient(#45cf48,#49e9d7);'></span></li>
+          <li style="height: 100%;"><span style='background-image:linear-gradient(#49e9d7,#4c94ff);'></span></li>
+          <li class="end"><span id="min"></span></li>
+          <li class="legend-title">Tweet distribution</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</body>
+
+<script type="text/javascript" src="static/global_variables.js"></script>
+<script type="text/javascript" src="static/heatmap_setup.js"></script>
+<script type="text/javascript" src="static/leaflet-heatmap.js"></script>
+<script type="text/javascript" src="static/marker_tools.js"></script>
+<script type="text/javascript" src="static/date_tools.js"></script>
+<script type="text/javascript" src="static/map_tools.js"></script>
+<script type="text/javascript" src="static/general_tools.js"></script>
+
+</html>
